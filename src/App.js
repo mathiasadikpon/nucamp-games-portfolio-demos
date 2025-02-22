@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GameCard from "./GameCard";
 
 const gamesList = [
@@ -22,10 +23,18 @@ const gamesList = [
   },
 ];
 function App() {
+  const [categoryFilter, setCategoryFilter] = useState("All");
+  let filteredGames;
+  if(categoryFilter === "All"){
+filteredGames = gamesList;
+  }
+  else{
+    filteredGames = gamesList.filter(game => game.category === categoryFilter);
+  }
   return (
     <div>
       <h1>My Board Games</h1>
-      {gamesList.map((game) => {
+      {filteredGames.map((game) => {
         return (<GameCard game={game}/>
         );
       })}
