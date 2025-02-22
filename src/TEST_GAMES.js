@@ -1,4 +1,4 @@
-export const TEST_GAMES = [
+export  const TEST_GAMES = [
   {
     id: 0,
     name: "Scythe",
