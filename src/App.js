@@ -1,3 +1,5 @@
+import GameCard from "./GameCard";
+
 const gamesList = [
   {
     id: 0,
@@ -24,10 +26,7 @@ function App() {
     <div>
       <h1>My Board Games</h1>
       {gamesList.map((game) => {
-        return (
-          <div>
-            <h4>{game.name}</h4> <p>{game.rating}</p> <p>{game.category}</p>{" "}
-          </div>
+        return (<GameCard game={game}/>
         );
       })}
     </div>
