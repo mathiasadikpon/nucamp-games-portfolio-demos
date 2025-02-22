@@ -33,8 +33,8 @@ export default function HomePage({ gamesList }) {
           Deck Building
         </button>
       </div>
-      {filteredGames.map((game) => {
-        return <GameCard game={game} />;
+      {filteredGames.map((game, idx) => {
+        return <GameCard key={idx} game={game} />;
       })}
     </div>
   );

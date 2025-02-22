@@ -1,4 +1,4 @@
-const GamePage = () => {
+const GamePage = ({gamesList}) => {
   return <div>Game</div>;
 };
 
