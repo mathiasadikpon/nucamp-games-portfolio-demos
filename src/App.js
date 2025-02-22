@@ -23,20 +23,20 @@ const gamesList = [
   },
 ];
 function App() {
-  const [categoryFilter, setCategoryFilter] = useState("All");
+  const [categoryFilter, setCategoryFilter] = useState("Fun");
   let filteredGames;
-  if(categoryFilter === "All"){
-filteredGames = gamesList;
-  }
-  else{
-    filteredGames = gamesList.filter(game => game.category === categoryFilter);
+  if (categoryFilter === "All") {
+    filteredGames = gamesList;
+  } else {
+    filteredGames = gamesList.filter(
+      (game) => game.category === categoryFilter
+    );
   }
   return (
     <div>
       <h1>My Board Games</h1>
       {filteredGames.map((game) => {
-        return (<GameCard game={game}/>
-        );
+        return <GameCard game={game} />;
       })}
     </div>
   );
