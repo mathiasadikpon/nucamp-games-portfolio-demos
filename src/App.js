@@ -14,7 +14,7 @@ function App() {
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">
-                      My Board Games
+            My Board Games
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">
@@ -26,15 +26,19 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-
-      <Routes>
-        <Route path="/" element={<HomePage gamesList={gamesList} />} />
-        <Route path="/random" element={<RandomPage gamesList={gamesList} />} />
-        <Route
-          path="/games/:gameId"
-          element={<GamePage gamesList={gamesList} />}
-        />
-      </Routes>
+      <Container className="mt-4">
+        <Routes>
+          <Route path="/" element={<HomePage gamesList={gamesList} />} />
+          <Route
+            path="/random"
+            element={<RandomPage gamesList={gamesList} />}
+          />
+          <Route
+            path="/games/:gameId"
+            element={<GamePage gamesList={gamesList} />}
+          />
+        </Routes>
+      </Container>
     </div>
   );
 }
